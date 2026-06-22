@@ -290,4 +290,4 @@ As rotas `/control`, `/scoreboard` e `/drink` só fazem sentido no contexto de u
 
 ---
 
-*Documento elaborado com base na arquitetura de software do DrunkRats — Helena Veltri, Leandro Retzlaff e Rayanna Christensen.*
+*Documento elaborado com base na arquitetura de software do DrunkRats — Helena Veltri, Leandro Retzlaff, Rayanna Christensen e Bernardo Grams.*

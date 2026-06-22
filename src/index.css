@@ -1,0 +1,151 @@
+@import "tailwindcss";
+@import 'material-icons/iconfont/material-icons.css';
+
+
+:root {
+  --bg:            #13111a;
+  --surface:       #1e1b29;
+  --text:          #8b80a8;
+  --text-h:        #ede9f7;
+  --border:        #2d2840;
+  --accent:        #9b5de5;
+  --accent-2:      #c084fc;
+  --accent-bg:     rgba(139, 92, 246, 0.12);
+  --accent-border: rgba(139, 92, 246, 0.40);
+  --shadow:        rgba(0, 0, 0, 0.5) 0 10px 15px -3px,
+                   rgba(0, 0, 0, 0.3) 0 4px 6px -2px;
+  --sans:    system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono:    ui-monospace, Consolas, monospace;
+
+  font: 16px/145% var(--sans);
+  color-scheme: dark;
+  color: var(--text-h);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 15px;
+  }
+}
+
+@theme {
+  --color-bg:           #13111a;
+  --color-surface:      #1e1b29;
+  --color-text:         #8b80a8;
+  --color-text-h:       #ede9f7;
+  --color-border:       #2d2840;
+  --color-primary:      #9b5de5;
+  --color-accent:       #c084fc;
+  --color-accent-bg:    rgba(139, 92, 246, 0.12);
+
+  --font-sans:    system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    ui-monospace, Consolas, monospace;
+}
+
+/* ── Reset base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--heading);
+  color: var(--text-h);
+  margin: 0;
+  font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; 
+}
+
+p {
+  margin: 0;
+}
+
+.text-display    { font-size: 3.5rem;  font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.text-headline   { font-size: 2rem;    font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.text-title      { font-size: 1.25rem; font-weight: 600; line-height: 1.3; letter-spacing: 0.005em}
+.text-body       { font-size: 1rem;    font-weight: 400; line-height: 1.5; }
+.text-label      { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+
+@media (max-width: 1024px) {
+  .text-display  { font-size: 2.5rem; }
+  .text-headline { font-size: 1.5rem; }
+}
+
+/* ── Espaço para a NavBar mobile (evita sobreposição) ── */
+@media (max-width: 767px) {
+  .pb-nav { padding-bottom: 4.5rem; }
+}
+
+/* ── Espaço para a NavBar Rail (tablet) ── */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .pl-rail { padding-left: 5rem; }
+}
+
+/* ── Espaço para o Navigation Drawer (desktop) ── */
+@media (min-width: 1280px) {
+  .pl-drawer { padding-left: 14rem; }
+}
+
+/* ── Focus ring global (acessibilidade) ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── Screen reader only ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Scrollbar personalizada ── */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text); }
+
+/* ── Animação de pontuação ── */
+@keyframes score-up {
+  0%   { transform: scale(1);    color: var(--text-h); }
+  50%  { transform: scale(1.25); color: var(--accent-2); }
+  100% { transform: scale(1);    color: var(--text-h); }
+}
+
+@keyframes score-down {
+  0%   { transform: scale(1);    color: var(--text-h); }
+  50%  { transform: scale(0.9);  color: var(--text); }
+  100% { transform: scale(1);    color: var(--text-h); }
+}
+
+.animate-score-up   { animation: score-up   0.35s ease; }
+.animate-score-down { animation: score-down 0.35s ease; }
+
+@keyframes gradient-aurora {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
