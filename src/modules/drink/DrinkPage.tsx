@@ -53,7 +53,7 @@ const DrinkPage = () => {
   }
 
   return (
-    <div className="min-h-svh flex flex-col" style={{ background: 'var(--bg)' }}>
+    <div className="w-full flex flex-col" style={{ background: 'var(--bg)' }}>
 
       <header
         className="sticky top-0 z-10 px-6 py-4 flex items-center gap-3"

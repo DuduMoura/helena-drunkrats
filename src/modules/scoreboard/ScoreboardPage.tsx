@@ -61,7 +61,7 @@ export default function ScoreboardPage() {
   }
 
   return (
-    <div className="min-h-svh flex flex-col" style={{ background: 'var(--bg)' }}>
+    <div className="w-full flex flex-col" style={{ background: 'var(--bg)' }}>
 
       <header
         className="sticky top-0 z-10 px-6 py-4 flex items-center justify-between"
@@ -93,7 +93,7 @@ export default function ScoreboardPage() {
             }}
             aria-label="Voltar para o controle da partida"
           >
-            ← CONTROLE
+            voltar para CONTROLE
           </button>
         )}
       </header>
