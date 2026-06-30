@@ -11,12 +11,16 @@ import DrinkPage from '@modules/drink/DrinkPage'
 
 function PlayersGuard({ children }: { children: React.ReactNode }) {
   const status = useGameStore((s) => s.status)
-  return status === 'setup' ? <>{children}</> : <Navigate to="/" replace />
+  if (status === 'setup') return <>{children}</>
+  if (status === 'playing') return <Navigate to="/control" replace />
+  return <Navigate to="/" replace />
 }
 
 function ControlGuard({ children }: { children: React.ReactNode }) {
   const status = useGameStore((s) => s.status)
-  return status === 'playing' ? <>{children}</> : <Navigate to="/" replace />
+  if (status === 'playing') return <>{children}</>
+  if (status === 'finished') return <Navigate to="/scoreboard" replace />
+  return <Navigate to="/" replace />
 }
 
 function ScoreboardGuard({ children }: { children: React.ReactNode }) {

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useGameStore } from '@/shared/store/useGameStore'
 import { gameRules, wellbeingItems } from './constants/homePageConstants'
+import drunkRatsLogo from '@app/assets/img/drunkrats logo 2.png'
 
 
 function hasSavedGame(): boolean {
@@ -37,13 +38,7 @@ export default function HomePage() {
   return (
     <div className="flex-1 w-full flex flex-col justify-center">
       <header className="flex flex-col items-center text-center px-6 pt-8 pb-8">
-        <div className="text-6xl mb-4" aria-hidden="true">🐀</div>
-        <h1
-          className="text-display font-black tracking-tight uppercase mb-2"
-          style={{ color: 'var(--text-h)' }}
-        >
-          Drunk<span style={{ color: 'var(--accent)' }}>Rats</span>
-        </h1>
+        <img src={drunkRatsLogo} alt="DrunkRats" className="h-30 mb-2 object-contain" />
 
         <p className="text-title" style={{ color: 'var(--text)', fontWeight: '150' }}>
           A gincana oficial da saideira que nunca acaba.

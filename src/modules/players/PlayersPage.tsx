@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useShallow } from 'zustand/react/shallow'
 import { useGameStore } from '@/shared/store/useGameStore'
 import PlayerCard from './PlayerCard'
@@ -11,7 +10,6 @@ const MIN_NAME_LEN = 2
 const MAX_NAME_LEN = 20
 
 export default function PlayersPage() {
-  const navigate = useNavigate()
   const { players, addPlayer, removePlayer } = useGameStore(
     useShallow((s) => ({
       players: s.players,
@@ -57,13 +55,12 @@ export default function PlayersPage() {
 
   function handleStart() {
     useGameStore.setState({ status: 'playing', startedAt: Date.now() })
-    navigate('/control')
   }
 
   const canStart = players.length >= MIN_PLAYERS
 
   return (
-    <div className="min-h-svh flex flex-col" style={{ background: 'var(--bg)' }}>
+    <div className="w-full flex flex-col" style={{ background: 'var(--bg)' }}>
 
       {/* ── Header ─────────────────────────────────────────────── */}
       <header
